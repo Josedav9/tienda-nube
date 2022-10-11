@@ -5,7 +5,7 @@ export type HttpRequest = {
   headers?: any;
 };
 
-export interface HttpClient<R> {
+export interface IHttpClient<R> {
   request: (data: HttpRequest) => Promise<HttpResponse<R>>;
 }
 
