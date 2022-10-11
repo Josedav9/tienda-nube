@@ -49,8 +49,8 @@ export default function Orders() {
         <thead>
           <tr>
             <td>ID</td>
-            <td>Student</td>
-            <td>Major</td>
+            <td>UUID</td>
+            <td>CODE</td>
           </tr>
         </thead>
         <tbody>
