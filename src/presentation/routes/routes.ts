@@ -1,5 +1,5 @@
 //Load pages
-import Store from "../pages/pages/Store";
+import Store from "../pages/Store";
 //Layouts
 import LayoutMenu from "../layouts/LayoutMenu";
 
