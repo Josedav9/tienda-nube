@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
-import * as reducers from "../infrastructure/reducer/slices";
+import * as reducers from "../slices";
 
 const IS_PRODUCTION = () => {
   return process.env.NODE_ENV === "production";
