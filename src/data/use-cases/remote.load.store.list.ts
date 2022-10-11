@@ -23,6 +23,7 @@ export class RemoteLoadStoreList implements LoadStoreList {
     const httpResponse = await this.httpClient.request({
       url: this.url,
       method: "get",
+      headers: {},
     });
 
     const remoteStores = httpResponse.body || [];

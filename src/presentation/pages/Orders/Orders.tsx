@@ -5,14 +5,22 @@ import { IHttpClient } from "../../../domain/http/http.client";
 import { StoreEntity } from "../../../domain/store/store.entity";
 import HttpClient from "../../../infrastructure/http";
 import { addStore } from "../../../infrastructure/reducer/slices/stores.slice";
+import Store from "../../components/store.component";
+import "./style.scss";
 
-export default function Store() {
+export default function Orders() {
   const [stores, setStores] = useState<Array<object>>([]);
+  const [isActive, setActive] = useState(false);
+
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
 
   const httpClient: IHttpClient<StoreEntity> = HttpClient;
 
+  //TODO: change the endpoint
   const loadUseCase = RemoteLoadStoreList.getInstance(
-    "https://random-data-api.com/api/users/random_user?size=10",
+    "https://random-data-api.com/api/users/random_user?size=10", //https://api.tiendanube.com/v1/orders
     httpClient
   );
 
@@ -31,10 +39,26 @@ export default function Store() {
 
   return (
     <div>
-      <h2>Hello world from Store</h2>
-      {stores.map((store) => (
-        <div className="store-secundary-div">{JSON.stringify(store)}</div>
-      ))}
+      <div className="four">
+        <h1>
+          <span>Tienda Nube</span> Orders: <em>{stores.length}</em> stores
+        </h1>
+      </div>
+      <button onClick={toggleClass}>3D Mode</button>
+      <table className={isActive ? "threeDMode" : " "}>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Student</td>
+            <td>Major</td>
+          </tr>
+        </thead>
+        <tbody>
+          {stores.map((store, index) => (
+            <Store store={store} key={index}></Store>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

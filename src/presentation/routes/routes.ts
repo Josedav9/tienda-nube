@@ -1,5 +1,5 @@
 //Load pages
-import Store from "../pages/Store";
+import Orders from "../pages/Orders";
 //Layouts
 import LayoutMenu from "../layouts/LayoutMenu";
 
@@ -7,13 +7,13 @@ const routes = [
   {
     path: "/",
     layout: LayoutMenu,
-    component: Store,
+    component: Orders,
   },
   {
     //404
     path: "/*",
     layout: LayoutMenu,
-    component: Store,
+    component: Orders,
   },
 ];
 
