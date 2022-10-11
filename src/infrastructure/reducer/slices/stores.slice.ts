@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { StoreEntity } from "../../../domain/store/store.entity";
 
-let initialState: Array<object> = [];
+let initialState: Array<StoreEntity> = [];
 
 const userSlice = createSlice({
   name: "stores",

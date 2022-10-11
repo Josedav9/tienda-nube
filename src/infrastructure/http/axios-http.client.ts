@@ -1,11 +1,11 @@
 import {
-  HttpClient,
+  IHttpClient,
   HttpRequest,
   HttpResponse,
-} from "../../domain/services/http/http.client";
+} from "../../domain/http/http.client";
 import axios, { AxiosResponse } from "axios";
 
-export class AxiosHttpClient implements HttpClient<AxiosResponse> {
+export class AxiosHttpClient implements IHttpClient<AxiosResponse> {
   async request(data: HttpRequest): Promise<HttpResponse<AxiosResponse>> {
     let axiosResponse: AxiosResponse;
     try {
